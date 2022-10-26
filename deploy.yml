@@ -1,13 +1,11 @@
 ---
 
-- name: Deploy to K8s
-  hosts: all
-  become: true
-
+- hosts: all
   tasks:
-  - name: Deploy User Service
+  - name: Deploy httpd service
     shell: |
       kubectl apply -f user-service.yml
       kubectl apply -f user-deployment.yml
+
   
  
